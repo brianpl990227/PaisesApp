@@ -21,6 +21,11 @@ export class PaisInputComponent implements OnInit {
     this.onEnter.emit(this.termino)
   }
 
+  sugerencias(termino: string)
+  {
+    console.log(termino)
+  }
+
 
   ngOnInit(): void {
     //Esta instruccion es para que presionada una tecla se esperen 300 ms para obtener su valor

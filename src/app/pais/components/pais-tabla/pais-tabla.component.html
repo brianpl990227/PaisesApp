@@ -1,4 +1,4 @@
-<table class="table table-hover">
+<table class="table table-hover ">
     <thead>
         <tr>
             <th>#</th>
@@ -9,7 +9,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of countries; let i = index">
+        <tr *ngFor="let item of countries; let i = index" class="animate__animated animate__fadeIn">
             <td>{{i + 1}}</td>
             <td>{{item.name}}</td>
             <td>{{item.capital}}</td>

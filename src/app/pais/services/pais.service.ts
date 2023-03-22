@@ -11,7 +11,7 @@ export class PaisService {
 
   private apiUrl: string = 'http://api.countrylayer.com/v2'
   //TODO: Mover esto para un fichero de configuracion
-  private apiKey: string = 'd01065c517b6f78f9a79fe669c655178'
+  private apiKey: string = '5d107d89f6b6fb8f92741fd62d7e4a5b'
   constructor(private http: HttpClient) { }
 
   buscarPais(termino: string): Observable<Country[]>
@@ -30,6 +30,12 @@ export class PaisService {
   {
      const params = new HttpParams().set('access_key', this.apiKey)
      return this.http.get<Country>(`${this.apiUrl}/alpha/${id}`, {params})
+  }
+
+  getPaisPorRegion(region: string): Observable<Country[]>
+  {
+     const params = new HttpParams().set('access_key', this.apiKey)
+     return this.http.get<Country[]>(`${this.apiUrl}/region/${region}`, {params})
   }
 
 }
